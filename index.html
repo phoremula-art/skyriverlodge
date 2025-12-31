@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky River Lodge | Rustic Cabin Retreat in Baring, WA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --forest-green: #2D5A3D;
+            --warm-brown: #8B4513;
+            --cream: #FAF8F5;
+            --dark-brown: #3D2914;
+            --sage: #87A878;
+            --gold: #C4A35A;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark-brown);
+            background-color: var(--cream);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(45, 90, 61, 0.95);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--cream);
+            text-decoration: none;
+        }
+        
+        .nav-links a {
+            color: var(--cream);
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover { color: var(--gold); }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(45, 90, 61, 0.4), rgba(61, 41, 20, 0.6)),
+                        url('https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=1920') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--cream);
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .cta-button {
+            background: var(--warm-brown);
+            color: var(--cream);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: var(--dark-brown);
+            transform: translateY(-2px);
+        }
+        
+        /* Sections */
+        section { padding: 5rem 2rem; }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--forest-green);
+            margin-bottom: 3rem;
+        }
+        
+        /* About Section */
+        .about {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--dark-brown);
+        }
+        
+        /* Amenities */
+        .amenities-section { background: var(--forest-green); color: var(--cream); }
+        
+        .amenities-section .section-title { color: var(--cream); }
+        
+        .amenities-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .amenity-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .amenity-card:hover { transform: translateY(-5px); }
+        
+        .amenity-icon { font-size: 3rem; margin-bottom: 1rem; }
+        
+        .amenity-card h3 { margin-bottom: 0.5rem; color: var(--gold); }
+        
+        /* Gallery */
+        .gallery-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img { transform: scale(1.1); }
+        
+        /* Testimonials */
+        .testimonials-section { background: var(--cream); }
+        
+        .testimonials-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--forest-green);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--dark-brown);
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--forest-green);
+        }
+        
+        .stars { color: var(--gold); margin-bottom: 0.5rem; }
+        
+        /* Booking Widget */
+        .booking-section { background: var(--dark-brown); color: var(--cream); }
+        
+        .booking-section .section-title { color: var(--cream); }
+        
+        .booking-widget {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        
+        .booking-form { display: grid; gap: 1.5rem; }
+        
+        .form-group { display: flex; flex-direction: column; }
+        
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--gold);
+        }
+        
+        .form-group input, .form-group select {
+            padding: 0.75rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        
+        .book-button {
+            background: var(--forest-green);
+            color: var(--cream);
+            padding: 1rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .book-button:hover { background: var(--sage); }
+        
+        /* Contact Section */
+        .contact-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info h3 {
+            color: var(--forest-green);
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--forest-green);
+            color: var(--cream);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+        
+        .map-placeholder {
+            background: #ddd;
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        .contact-form textarea { min-height: 120px; resize: vertical; }
+        
+        .submit-btn {
+            background: var(--warm-brown);
+            color: var(--cream);
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .submit-btn:hover { background: var(--dark-brown); }
+        
+        /* Footer */
+        footer {
+            background: var(--forest-green);
+            color: var(--cream);
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        footer a { color: var(--gold); }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .about, .contact-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" class="logo">Sky River Lodge</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#amenities">Amenities</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#testimonials">Reviews</a>
+            <a href="#booking">Book Now</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Sky River Lodge</h1>
+        <p class="tagline">Your Rustic Mountain Escape in the Cascades</p>
+        <a href="#booking" class="cta-button">Book Your Stay</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">Welcome to Sky River Lodge</h2>
+        <div class="about">
+            <img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=600" alt="Sky River Lodge Interior" class="about-image">
+            <div class="about-text">
+                <p>Nestled along the scenic Skykomish River in Baring, Washington, Sky River Lodge offers a perfect blend of rustic charm and modern comfort. Our cozy cabins provide an ideal retreat for those seeking to reconnect with nature while enjoying the convenience of home.</p>
+                <p>Whether you're looking for a romantic getaway, a family adventure, or a peaceful solo retreat, our lodge offers breathtaking mountain views, access to world-class hiking trails, and the tranquil sounds of the river right outside your door.</p>
+                <p>Located just an hour from Seattle, Sky River Lodge is your gateway to the stunning North Cascades wilderness. Experience the magic of the Pacific Northwest in every season.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="amenities-section" id="amenities">
+        <h2 class="section-title">Lodge Amenities</h2>
+        <div class="amenities-grid">
+            <div class="amenity-card">
+                <div class="amenity-icon">ðï¸</div>
+                <h3>Mountain Views</h3>
+                <p>Wake up to stunning panoramic views of the Cascade Mountains</p>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">ð¥</div>
+                <h3>Wood Fireplace</h3>
+                <p>Cozy up by the authentic wood-burning fireplace</p>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">ð³</div>
+                <h3>Full Kitchen</h3>
+                <p>Fully equipped kitchen with modern appliances</p>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">ð</div>
+                <h3>Hot Tub</h3>
+                <p>Private outdoor hot tub overlooking the river</p>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">ð¶</div>
+                <h3>Free WiFi</h3>
+                <p>Stay connected with complimentary high-speed internet</p>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">ð</div>
+                <h3>Free Parking</h3>
+                <p>Ample parking space for vehicles and trailers</p>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">ð</div>
+                <h3>Pet Friendly</h3>
+                <p>Your furry friends are welcome at our lodge</p>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">ð¿</div>
+                <h3>Outdoor Gear</h3>
+                <p>Complimentary snowshoes, hiking poles, and fishing gear</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2 class="section-title">Photo Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=600" alt="Cabin exterior">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1595521624992-48a59aef95e3?w=600" alt="Living room">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600" alt="Bedroom">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600" alt="Mountain view">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=600" alt="Kitchen">
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb?w=600" alt="River view">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <h2 class="section-title">Guest Reviews</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">âââââ</div>
+                <p class="testimonial-text">"Absolutely magical! The cabin was spotless, the views were incredible, and falling asleep to the sound of the river was pure bliss. We'll definitely be back!"</p>
+                <p class="testimonial-author">â Sarah M., Seattle</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">âââââ</div>
+                <p class="testimonial-text">"Perfect mountain getaway! The hot tub under the stars was amazing. The hosts thought of everything. Highly recommend for anyone looking to escape the city."</p>
+                <p class="testimonial-author">â Michael R., Portland</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">âââââ</div>
+                <p class="testimonial-text">"We brought our dog and had the best family vacation. The hiking trails nearby are beautiful and the cabin had everything we needed. Already planning our return trip!"</p>
+                <p class="testimonial-author">â Jennifer L., Vancouver BC</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section" id="booking">
+        <h2 class="section-title">Book Your Stay</h2>
+        <div class="booking-widget">
+            <form class="booking-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="checkin">Check-in Date</label>
+                        <input type="date" id="checkin" name="checkin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout">Check-out Date</label>
+                        <input type="date" id="checkout" name="checkout" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <select id="guests" name="guests">
+                            <option value="1">1 Guest</option>
+                            <option value="2" selected>2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cabin">Cabin Type</label>
+                        <select id="cabin" name="cabin">
+                            <option value="riverside">Riverside Cabin</option>
+                            <option value="mountain">Mountain View Suite</option>
+                            <option value="family">Family Lodge</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="book-button">Check Availability</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <div class="contact-item">
+                    <div class="contact-icon">ð</div>
+                    <div>
+                        <strong>Address</strong><br>
+                        123 River Road, Baring, WA 98224
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">ð</div>
+                    <div>
+                        <strong>Phone</strong><br>
+                        (360) 555-LODGE
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">âï¸</div>
+                    <div>
+                        <strong>Email</strong><br>
+                        info@skyriverlodge.com
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">ð</div>
+                    <div>
+                        <strong>Office Hours</strong><br>
+                        Mon-Sun: 8am - 8pm PST
+                    </div>
+                </div>
+                <div class="map-placeholder">
+                    [Google Maps - Baring, WA]
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3 style="color: var(--forest-green); margin-bottom: 1.5rem;">Send a Message</h3>
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Subject">
+                    <textarea placeholder="Your Message"></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Sky River Lodge. All rights reserved.</p>
+        <p>123 River Road, Baring, WA 98224 | <a href="mailto:info@skyriverlodge.com">info@skyriverlodge.com</a></p>
+    </footer>
+</body>
+</html>
