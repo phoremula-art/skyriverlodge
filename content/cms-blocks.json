@@ -1,0 +1,108 @@
+{
+  "site": {
+    "name": "Sky River Lodge",
+    "tagline": "Your Rustic Mountain Escape in the Cascades",
+    "theme": {
+      "primaryColor": "#2D5A3D",
+      "secondaryColor": "#8B4513",
+      "backgroundColor": "#FAF8F5",
+      "textColor": "#3D2914",
+      "accentColor": "#C4A35A"
+    }
+  },
+  "hero": {
+    "title": "Sky River Lodge",
+    "subtitle": "Your Rustic Mountain Escape in the Cascades",
+    "ctaText": "Book Your Stay",
+    "ctaLink": "#booking",
+    "backgroundImage": "https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=1920"
+  },
+  "about": {
+    "title": "Welcome to Sky River Lodge",
+    "paragraphs": [
+      "Nestled along the scenic Skykomish River in Baring, Washington, Sky River Lodge offers a perfect blend of rustic charm and modern comfort.",
+      "Whether you're looking for a romantic getaway, a family adventure, or a peaceful solo retreat, our lodge offers breathtaking mountain views, access to world-class hiking trails, and the tranquil sounds of the river right outside your door.",
+      "Located just an hour from Seattle, Sky River Lodge is your gateway to the stunning North Cascades wilderness."
+    ],
+    "image": "https://images.unsplash.com/photo-1587061949409-02df41d5e562?w=600"
+  },
+  "amenities": [
+    {
+      "icon": "ðï¸",
+      "title": "Mountain Views",
+      "description": "Wake up to stunning panoramic views of the Cascade Mountains"
+    },
+    {
+      "icon": "ð¥",
+      "title": "Wood Fireplace",
+      "description": "Cozy up by the authentic wood-burning fireplace"
+    },
+    {
+      "icon": "ð³",
+      "title": "Full Kitchen",
+      "description": "Fully equipped kitchen with modern appliances"
+    },
+    {
+      "icon": "ð",
+      "title": "Hot Tub",
+      "description": "Private outdoor hot tub overlooking the river"
+    },
+    {
+      "icon": "ð¶",
+      "title": "Free WiFi",
+      "description": "Stay connected with complimentary high-speed internet"
+    },
+    {
+      "icon": "ð",
+      "title": "Free Parking",
+      "description": "Ample parking space for vehicles and trailers"
+    },
+    {
+      "icon": "ð",
+      "title": "Pet Friendly",
+      "description": "Your furry friends are welcome at our lodge"
+    },
+    {
+      "icon": "ð¿",
+      "title": "Outdoor Gear",
+      "description": "Complimentary snowshoes, hiking poles, and fishing gear"
+    }
+  ],
+  "testimonials": [
+    {
+      "text": "Absolutely magical! The cabin was spotless, the views were incredible, and falling asleep to the sound of the river was pure bliss. We'll definitely be back!",
+      "author": "Sarah M., Seattle",
+      "rating": 5
+    },
+    {
+      "text": "Perfect mountain getaway! The hot tub under the stars was amazing. The hosts thought of everything. Highly recommend for anyone looking to escape the city.",
+      "author": "Michael R., Portland",
+      "rating": 5
+    },
+    {
+      "text": "We brought our dog and had the best family vacation. The hiking trails nearby are beautiful and the cabin had everything we needed. Already planning our return trip!",
+      "author": "Jennifer L., Vancouver BC",
+      "rating": 5
+    }
+  ],
+  "contact": {
+    "address": "123 River Road, Baring, WA 98224",
+    "phone": "(360) 555-LODGE",
+    "email": "info@skyriverlodge.com",
+    "hours": "Mon-Sun: 8am - 8pm PST"
+  },
+  "cabinTypes": [
+    {
+      "id": "riverside",
+      "name": "Riverside Cabin"
+    },
+    {
+      "id": "mountain",
+      "name": "Mountain View Suite"
+    },
+    {
+      "id": "family",
+      "name": "Family Lodge"
+    }
+  ]
+}
